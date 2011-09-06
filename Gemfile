@@ -31,3 +31,8 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+gem 'haml'
+
+gem "mongoid", "~> 2.2"
+gem "bson_ext", "~> 1.3"

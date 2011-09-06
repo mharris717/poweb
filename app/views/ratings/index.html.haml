@@ -1,0 +1,26 @@
+= form_for Rating.fresh do |f|
+  = f.label :last_completed_week
+  = f.select :week, (0..17)
+  %br
+  = f.text_area :raw_str
+  %br
+  = f.submit "Add Rating"
+  
+%br
+%br
+
+%table
+  %tr
+    %th Week
+    %th Status
+    %th Get Page
+    %th Created
+  - Rating.all.each do |r|
+    %tr
+      %td= r.week
+      %td= r.status
+      %td
+        - if r.output_page.present?
+          = link_to 'Get Page', r
+      %td= r.created_at
+  
