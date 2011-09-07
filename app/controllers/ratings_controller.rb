@@ -18,4 +18,9 @@ class RatingsController < ApplicationController
     r = Rating.find(params[:id])
     render :text => r.output_page
   end
+  def clear_ratings
+    Rating.destroy_all if params[:abc] == '92'
+    render :template => 'ratings/index'
+  end
+    
 end

@@ -1,6 +1,7 @@
 PoWeb::Application.routes.draw do
   resources :ratings do
     get 'next_open', :on => :collection
+    get 'clear_ratings', :on => :collection
   end
   root :to => 'ratings#index'
   # The priority is based upon order of creation:
