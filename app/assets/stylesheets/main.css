@@ -1,0 +1,8 @@
+.field {
+  position: absolute;
+  left: 150px;
+}
+
+.whole-field {
+  padding-bottom: 8px;
+}
