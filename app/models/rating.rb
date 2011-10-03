@@ -26,4 +26,7 @@ class Rating
   def self.fresh
     new(:week => current_week, :status => 'Open', :iterations => 1000)
   end
+  def self.all_sorted
+    all.sort_by { |x| x.created_at || Time.local(2011,1,1) }.reverse
+  end
 end

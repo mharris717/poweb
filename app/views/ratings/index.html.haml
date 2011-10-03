@@ -25,7 +25,7 @@
     %th Get Page
     %th Created
     %th Delete
-  - Rating.all.each do |r|
+  - Rating.all_sorted.each do |r|
     %tr
       %td= r.week
       %td= r.status
