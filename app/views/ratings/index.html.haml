@@ -32,5 +32,5 @@
       %td
         - if r.output_page.present?
           = link_to 'Get Page', r
-      %td= r.created_at
+      %td= r.created_at_tz ? r.created_at_tz.strftime("%m/%d %I:%M %p") : nil
       %td= link_to 'Delete', r, :method => :delete

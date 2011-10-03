@@ -29,4 +29,7 @@ class Rating
   def self.all_sorted
     all.sort_by { |x| x.created_at || Time.local(2011,1,1) }.reverse
   end
+  def created_at_tz
+    created_at ? created_at - 3600*5 : nil
+  end
 end
