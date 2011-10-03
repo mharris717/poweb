@@ -9,7 +9,7 @@ class Rating
   
   before_save do |obj|
     obj.status = 'Done' if obj.status == 'Open' && obj.output_page.present? && !(obj.output_page =~ /processing error/i)
-    obj.iterations ||= 1000
+    obj.iterations ||= 10000
   end
   
   def self.current_week
@@ -24,7 +24,7 @@ class Rating
     return nil
   end
   def self.fresh
-    new(:week => current_week, :status => 'Open', :iterations => 1000)
+    new(:week => current_week, :status => 'Open', :iterations => 10000)
   end
   def self.all_sorted
     all.sort_by { |x| x.created_at || Time.local(2011,1,1) }.reverse
