@@ -8,7 +8,7 @@ class Rating
   field :iterations, :type => Fixnum
   
   before_save do |obj|
-    obj.status = 'Done' if obj.status == 'Open' && obj.output_page.present?
+    obj.status = 'Done' if obj.status == 'Open' && obj.output_page.present? && !(obj.output_page =~ /processing error/i)
     obj.iterations ||= 1000
   end
   
