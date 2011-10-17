@@ -3,12 +3,12 @@ class RatingsController < ApplicationController
   end
   def create
     r = Rating.create!(params[:rating].merge(:status => 'Open'))
-    render :template => 'ratings/index'
+    redirect_to '/'
   end
   def update
     r = Rating.find(params[:id])
     r.update_attributes(params[:rating])
-    render :template => 'ratings/index'
+    redirect_to '/'
   end
   def next_open
     r = Rating.where(:status => 'Open').first
@@ -21,11 +21,11 @@ class RatingsController < ApplicationController
   def destroy
     r = Rating.find(params[:id])
     r.destroy
-    render :template => 'ratings/index'
+    redirect_to '/'
   end
   def clear_ratings
     Rating.destroy_all if params[:abc] == '92'
-    render :template => 'ratings/index'
+    redirect_to '/'
   end
     
 end
