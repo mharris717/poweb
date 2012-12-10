@@ -16,7 +16,11 @@ class RatingsController < ApplicationController
   end
   def show
     r = Rating.find(params[:id])
-    render :text => r.output_page
+    if params[:dvoa]
+      render :text => "<pre>#{r.dvoa}</pre>"
+    else
+      render :text => r.output_page
+    end
   end
   def destroy
     r = Rating.find(params[:id])
