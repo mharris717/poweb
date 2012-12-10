@@ -17,7 +17,7 @@ class RatingsController < ApplicationController
   def show
     r = Rating.find(params[:id])
     if params[:dvoa]
-      render :text => "<pre>#{r.dvoa}</pre>"
+      render :text => "<pre>#{r.raw_str}</pre>"
     else
       render :text => r.output_page
     end
