@@ -22,3 +22,6 @@ gem 'haml'
 gem "mongoid", "~> 2.2.0"
 gem "bson", "~> 1.3.1" 
 gem "bson_ext", "~> 1.3.1" 
+
+gem 'unicorn'
+gem 'therubyracer'
