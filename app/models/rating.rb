@@ -13,13 +13,12 @@ class Rating
   end
   
   def self.current_week
-    h = {}
-    d = Date.new(2011,9,11)
-    i = 0
-    (0...17).each do |xx|
-      return i if Date.today < d
-      i += 1
-      d += 7
+    end_of_week = Date.new(2013,9,9)
+    week = 0
+    17.times do
+      return week if Date.today < end_of_week
+      week += 1
+      end_of_week += 7
     end
     return nil
   end
