@@ -16,10 +16,17 @@ class RatingsController < ApplicationController
   end
   def show
     r = Rating.find(params[:id])
-    if params[:dvoa]
-      render :text => "<pre>#{r.raw_str}</pre>"
-    else
-      render :text => r.output_page
+    respond_to do |format|
+      format.html do
+        if params[:dvoa]
+          render :text => "<pre>#{r.raw_str}</pre>"
+        else
+          render :text => r.output_page
+        end
+      end
+      format.json do
+        render :json => r
+      end
     end
   end
   def destroy
