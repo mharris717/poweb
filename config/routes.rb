@@ -1,4 +1,6 @@
 PoWeb::Application.routes.draw do
+  resources :input_files
+
   resources :ratings do
     get 'next_open', :on => :collection
     get 'clear_ratings', :on => :collection

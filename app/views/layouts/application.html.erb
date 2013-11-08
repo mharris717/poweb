@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= link_to 'Weeks', :ratings %> | 
+  <%= link_to 'Super Bowls', new_input_file_path %><br>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

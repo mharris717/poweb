@@ -1,0 +1,9 @@
+= form_for @input_file do |f|
+  = f.hidden_field :file_type
+  %h2
+    = f.object.file_type
+
+  = f.text_area :body
+  %br
+  = f.submit "Update"
+  
